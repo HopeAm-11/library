@@ -1,0 +1,74 @@
+.body {
+    border: 1px solid red;
+    overflow: hidden;
+
+}
+
+.hero__header {
+    height: 10rem;
+    /* Flexbox stuff */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/hero.jpg) no-repeat;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/images/hero.jpg) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/hero.jpg) no-repeat;
+    background-size: cover;
+    grid-column: 1/4;
+
+}
+
+.hero__title {
+    font-size: clamp(1em, 8vw, 3em);
+    text-align: center;
+    color: white;
+
+}
+
+.sub-heading {
+    font-size: clamp(1em, 5vw, 1.3em);
+    color: white;
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+
+.main {
+    border: 1px solid black;
+    min-height: 100vh;
+}
+
+.main-aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: aquamarine;
+
+}
+
+.aside__button {
+    display: block;
+}
