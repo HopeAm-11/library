@@ -17,10 +17,35 @@
     </header>
     <div class="grid">
         <aside class="aside main-aside">
-            <button class="button aside__button">Add a book +</button>
+            <button class="button aside__button" id="add_btn">Add a book +</button>
         </aside>
         <main class="main">
+            <form class="form" action="#" id="form">
+                <legend>Form title</legend>
+                <div>
+                    <label class="label" for="title">Title</label>
+                    <input class="input title" type="text" id="title" name="title">
+                </div>
+                <div>
+                    <label class="label" for="author">Author</label>
+                    <input class="input author" type="text" id="author" name="author">
+                </div>
+                <div>
+                    <label class="label" for="page">Number of page</label>
+                    <input class="input page" type="number" name="page" id="page">
+                </div>
+                <div>
+                    <label class="label" for="read">Read</label>
+                    <input class="input radio radio-read" type="radio" name="read" id="read" value="read">
+                    <label class="label" for="notread">Not read yet</label>
+                    <input class="input radio radio-notread" type="radio" name="read" id="notread" value="not read yet">
 
+                </div>
+                <div class="div__btn">
+                    <button class="button button__submit" id="submit" type="submit">Submit</button>
+                </div>
+            </form>
+            <div id="here"></div>
         </main>
     </div>
 </body>
