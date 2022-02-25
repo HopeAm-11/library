@@ -1,3 +1,15 @@
+button,
+label,
+input,
+select,
+progress,
+meter {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 5px;
+}
+
 .body {
     border: 1px solid red;
     overflow: hidden;
@@ -49,6 +61,7 @@
 .main {
     border: 1px solid black;
     min-height: 100vh;
+
 }
 
 .main-aside {
@@ -71,4 +84,68 @@
 
 .aside__button {
     display: block;
+
+}
+
+/*form style*/
+.form {
+    border: 1px solid red;
+    width: 50%;
+    height: 30rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background-color: #fff;
+}
+
+.form>* {
+    margin-left: 10px;
+}
+
+
+.input {
+    width: 100%;
+    /* padding: 12px 20px; */
+    /* margin: 8px 0; */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.radio {
+    width: 5%;
+}
+
+.page {
+    width: 20%;
+}
+
+.label {
+    /* margin-right: 3rem; */
+    padding: 12px 12px 12px 0;
+}
+
+.div__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+}
+
+.button__submit {
+    /* border: 2px solid #333; */
+    width: 50%;
+    border-radius: 5px;
+    background: none;
+    /* margin: 0 auto; */
 }
