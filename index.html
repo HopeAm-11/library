@@ -45,11 +45,12 @@
                 </section> -->
             </article>
             <div class="main__form_grid" id="form">
-                <form class="form" action="#">
+                <form action="#" method="get" class="form">
                     <legend>Form title</legend>
                     <div>
                         <label class="label" for="title">Title</label>
-                        <input class="input title" type="text" id="title" name="title">
+                        <input class="input title" type="text" id="title" name="title" placeholder="First Name"
+                            required="required">
                     </div>
                     <div>
                         <label class="label" for="author">Author</label>
@@ -63,13 +64,14 @@
                         <label class="label" for="read">Read</label>
                         <input class="input radio radio-read" type="radio" name="read" id="read" value="read">
                         <label class="label" for="notread">Not read yet</label>
-                        <input class="input radio radio-notread" type="radio" name="read" id="notread"
+                        <input class="input radio radio-notread" type="radio" name="read" id="notread "
                             value="Not Read Yet">
                     </div>
+                    <div class="div__btn">
+                        <button class="button button__submit" id="submit" type="submit">Submit</button>
+                    </div>
                 </form>
-                <div class="div__btn">
-                    <button class="button button__submit" id="submit" type="submit">Submit</button>
-                </div>
+
             </div>
         </main>
     </div>

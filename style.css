@@ -12,7 +12,7 @@ meter {
 
 .body {
     border: 1px solid red;
-    overflow: hidden;
+    /* overflow: hidden; */
 
 }
 
@@ -169,10 +169,10 @@ meter {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 500px));
     grid-auto-rows: 300px;
-    grid-gap: 3rem;
-    -webkit-box-pack: space-evenly;
+    grid-gap: 1rem;
+    /* -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
 
 }
 
@@ -191,6 +191,11 @@ meter {
     -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
 
 .main__title {
@@ -203,4 +208,21 @@ meter {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+}
+
+.items {
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    background: gold;
+}
+
+.card_info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.card_info>* {
+    margin-left: 10px;
 }
