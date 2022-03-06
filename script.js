@@ -1,57 +1,67 @@
-let submitBtn = document.querySelector("#submit");
-let msg = document.getElementById("here");
-let form = document.querySelector("#form")
-form.style.display = "none";
-let addBtn = document.querySelector("#add_btn");
-let inputData = [];
+let formDiv = document.getElementById("form");
 let title = document.querySelector("#title");
 let author = document.querySelector("#author");
-let page = document.querySelector("#page");
+let page = document.querySelector("#page_number");
 let radioButtion = document.getElementsByName("read");
-let card = document.querySelector("#main_card");
 let articleCard = document.querySelector("#main_card");
-let user = new Array();
-// card.style.display = "none";
+let submitBtn = document.querySelector("#submit");
+let addBtn = document.querySelector("#add_btn");
+let cross = document.querySelector("#cross")
+let section = document.querySelector("#section");
 
+let user
+let inputData = [];
+formDiv.style.display = "none";
+let counter = 0;
 
 function addBookToLibrary() {
-
     class book {
         constructor(title, author, page) {
             this.title = title;
             this.author = author;
             this.page = page;
+
         }
-        get test() {
-            return this.getThis();
+        get radioCheck() {
+            return this.radio();
         }
-        getThis() {
+        radio() {
             for (let i = 0; i < radioButtion.length; i++) {
                 if (radioButtion[i].checked) {
                     return radioButtion[i].value;
                 }
             }
         };
+        get thisId() {
+            return this.getId();
+        }
+
+        getId() {
+            for (let i = 0; i < 1; i++) {
+                return section.setAttribute('data-id', counter++);
+            }
+        }
 
     }
 
     user = new book(title.value, author.value, page.value);
     // inputData.push(` title ${user.title} <br> author: ${user.author} <br> page: ${user.page} <br> Read: ${user.test}`);
-    inputData.push(user.title);
-    inputData.push(user.author);
-    inputData.push(user.page);
-    inputData.push(user.test);
-    maybe();
+    inputData.push(user); // push the user object into the input data 
+    // inputData.push(user.author);
+    // inputData.push(user.page);
+    // inputData.push(user.radioCheck);
 
 }
 
-function maybe() {
-    for (let i = 0; i < 1; i++) {
-        // console.log(inputData[i]);
-        let section = document.createElement("section");
-        section.className = "card";
 
+
+function createNewCard() {
+    for (let i = 0; i < 1; i++) {
+        section = document.createElement("section");
+        section.className = "card";
+        section.setAttribute('id', 'section');
         articleCard.appendChild(section);
+
         let div1 = document.createElement("div");
         section.appendChild(div1);
         div1.className = "card_info";
@@ -101,84 +111,35 @@ function maybe() {
         p3.className = "para";
         p4.className = "para";
 
-        for (let i = 0; i < inputData.length; i++) {
-            p1.innerHTML = inputData[0];
-            p2.innerHTML = inputData[1];
-            p3.innerHTML = inputData[2];
-            p4.innerHTML = inputData[3];
 
+        for (let i = 0; i < inputData.length; i++) {
+            p1.innerHTML = inputData[i].title;
+            p2.innerHTML = inputData[i].author;
+            p3.innerHTML = inputData[i].page;
+            p4.innerHTML = inputData[i].radioCheck;
 
         }
+        user.thisId;
+
     }
 }
 
-// inputData.push(input2);
-// console.log(inputData);
-// let inputLength = inputData.length
-// for (let i = 0; i < inputLength; i++) {
-//     msg.innerHTML = inputData;
-//     // console.log(inputData[i]);
-// remove();
-// let copyCard = cardClone.cloneNode(true);
-// copyCard.id = 'card_2'
-// copyCard.classList.add('card');
-// cardClone.after(copyCard);
+// function addCustomData() {
+//     let test = document.getElementById('section');
+//     test.setAttribute('data-num', 0);
+//     test.dataset.num++;
 
-// function addThisCard() {
-//     // e.preventDefault();
-//     for (let i = 0; i < 1; i++) {
-//         let section = document.createElement("section");
-//         section.className = "card";
-//         articleCard.appendChild(section);
-//         let div1 = document.createElement("div");
-//         let div2 = document.createElement("div");
-//         let div3 = document.createElement("div");
-//         let div4 = document.createElement("div");
-
-//         section.appendChild(div1);
-//         section.appendChild(div2);
-//         section.appendChild(div3);
-//         section.appendChild(div4);
-
-//         let head1 = document.createElement("h1");
-//         let head2 = document.createElement("h1");
-//         let head3 = document.createElement("h1");
-//         let head4 = document.createElement("h1");
-//         let title1 = document.createTextNode("Title");
-//         let author1 = document.createTextNode("Author");
-//         let page1 = document.createTextNode("Number of Page");
-//         let read1 = document.createTextNode("Read");
-
-//         head1.appendChild(title1);
-//         head2.appendChild(author1);
-//         head3.appendChild(page1);
-//         head4.appendChild(read1);
-
-//         let p1 = document.createElement("p");
-//         let p2 = document.createElement("p");
-//         let p3 = document.createElement("p");
-//         let p4 = document.createElement("p");
-//         let test = document.createTextNode(inputData.title);
-//         p1.appendChild(test);
-
-//         div1.appendChild(head1, p1);
-//         div2.appendChild(head2, p2);
-//         div3.appendChild(head3, p3);
-//         div4.appendChild(head4, p4);
-//     }
 // }
+// submitBtn.addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     addBookToLibrary();
+//     remove();
+//     // addThisCard();
+//     form.style.display = "none";
+//     // msg.style.display = "block";
+//     card.style.display = "grid"
 
-submitBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    addBookToLibrary();
-    remove();
-    // addThisCard();
-    form.style.display = "none";
-    // msg.style.display = "block";
-    card.style.display = "grid"
-
-
-});
+// });
 
 
 
@@ -187,16 +148,30 @@ function remove() {
     author.value = '';
     page.value = '';
     radioButtion.value = "";
-    inputData = [];
+    // inputData = [];
+    formDiv.style.display = "none";
 
 }
 
 function displayForm() {
-    form.style.display = "block";
-    // msg.style.display = "none";
-    card.style.display = "none"
-
-
+    form.style.display = "flex";
+    formDiv.style.display = "grid";
+    // form.style.animation = "animate 2s linear infinite";
 
 }
+
 addBtn.addEventListener("click", displayForm);
+
+form.addEventListener('submit', event => {
+    event.preventDefault()
+    addBookToLibrary();
+    formDiv.style.display = "none";
+    articleCard.style.display = "grid";
+    createNewCard();
+    remove();
+})
+
+cross.addEventListener('click', () => {
+    formDiv.style.display = "none";
+    articleCard.style.display = "grid"
+})
